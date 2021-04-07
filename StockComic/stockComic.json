@@ -1,0 +1,121 @@
+{
+    "gutter": 5,
+    "currentLayout": "init",
+    "layouts": [
+     {
+      "name": "init",
+      "panels": [
+       ["row1"],
+        ["day1", "day1Action"]
+      ]
+     }
+    ],
+    "classes": [],
+    "variables": [
+     {
+      "name": "day1Buy",
+      "value": 0
+     },
+     {
+      "name": "moneyLeft",
+      "value": 1000,
+      "what": [
+       "(",
+       "moneyLeft",
+       "-",
+       "day1Buy",
+       ")"
+      ]
+     }],
+    "panels": [
+     {
+      "id": "row1",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Row1.svg"
+     },
+     {
+      "id": "day1",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day1.svg"
+     },
+     {
+      "id": "day1Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day1Action.svg"
+     },
+     {
+      "id": "day2",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day2.svg"
+     },
+     {
+      "id": "day3",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day3.svg"
+     },
+     {
+      "id": "day4",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day4.svg"
+     },
+     {
+      "id": "day5",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day5.svg"
+     },
+     {
+      "id": "Day1Buy",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Day1Buy.svg",
+      "input": [
+    {
+     "id": "amountInputPlaceHolder",
+     "variable": "day1Buy"
+    }
+   ]
+     }
+    ],
+    "operations": [
+     {
+      "trigger": "mouseover",
+      "element": "RectangleDay1BuyBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "day1SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "confirmDay1BT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "operation": "isotype",
+      "variable": "moneyLeft",
+      "to": "leftIcon",
+      "attr": {
+       "widthIcon": 15
+      },
+      "icon": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/moneyIcon.svg"
+     },
+     {
+   "trigger": "click",
+   "operation": "loadLayout",
+   "element": "RectangleDay1BuyBT",
+   "layout": [
+   "Day1Buy"
+   ],
+   "after": "day1Action",
+   "group": "group1"
+  }
+    ]
+   }
