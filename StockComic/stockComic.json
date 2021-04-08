@@ -5,7 +5,7 @@
      {
       "name": "init",
       "panels": [
-       ["row1"],
+       ["row1"],["BandS"],
         ["day1", "day1Action"]
       ]
      }
@@ -17,20 +17,73 @@
       "value": 0
      },
      {
-      "name": "moneyLeft",
-      "value": 1000,
+      "name": "day2Earn",
+      "value": 0,
+      "what": ["day1Buy", "*", "0.005"]
+     },
+     {
+      "name": "day2Buy",
+      "value": 0
+     },
+     {
+      "name": "cash",
+      "value": 0,
+      "what": ["1000","-","day1Buy"]
+     },
+     {
+      "name": "cashIcon",
+      "value": 0,
       "what": [
-       "(",
-       "moneyLeft",
-       "-",
-       "day1Buy",
-       ")"
+       "(", "cash","-","day1Buy",")", "/","100"
+       
       ]
+     },
+     {
+      "name": "inMarket",
+      "value": 0,
+      "what": [
+      "day1Buy","+","day1Earn"
+       ]
      }],
     "panels": [
      {
       "id": "row1",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Row1.svg"
+     },
+      {
+      "id": "BandS",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/BandS.svg",
+      "input": [
+    {
+     "id": "D1InputPlaceHolder",
+     "variable": "day1Buy"
+    },
+    {
+        "id": "D2InputPlaceHolder",
+        "variable": "day2Buy"
+    },
+    {
+        "id": "D2sellPlaceHolder",
+        "variable": "day2Sell"
+    },
+    {
+        "id": "D3InputPlaceHolder",
+        "variable": "day3Buy"
+    },
+    {
+        "id": "D3sellPlaceHolder",
+        "variable": "day3Sell"
+    },
+    {
+        "id": "D4InputPlaceHolder",
+        "variable": "day4Buy"
+    },
+    {
+        "id": "D4sellPlaceHolder",
+        "variable": "day4Sell"
+    }
+       
+    ]
      },
      {
       "id": "day1",
@@ -57,27 +110,12 @@
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day5.svg"
      },
      {
-      "id": "Day1Buy",
-      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Day1Buy.svg",
-      "input": [
-    {
-     "id": "amountInputPlaceHolder",
-     "variable": "day1Buy"
-    }
-   ]
+      "id": "Day2Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day2Action.svg"
      }
     ],
     "operations": [
-     {
-      "trigger": "mouseover",
-      "element": "RectangleDay1BuyBT",
-      "operation": "highlight",
-      "after": {
-       "style": {
-        "fill": "orange"
-       }
-      }
-     },
+     
      {
       "trigger": "mouseover",
       "element": "day1SkipBT",
@@ -88,34 +126,24 @@
        }
       }
      },
-     {
-      "trigger": "mouseover",
-      "element": "confirmDay1BT",
-      "operation": "highlight",
-      "after": {
-       "style": {
-        "fill": "orange"
-       }
-      }
-     },
+   
      {
       "operation": "isotype",
-      "variable": "moneyLeft",
-      "to": "leftIcon",
+      "variable": "cashIcon",
+      "to": "cashIconPlaceHolder",
       "attr": {
-       "widthIcon": 15
+       "widthIcon": 20
       },
       "icon": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/moneyIcon.svg"
      },
-     {
+  {
    "trigger": "click",
-   "operation": "loadLayout",
-   "element": "RectangleDay1BuyBT",
-   "layout": [
-   "Day1Buy"
-   ],
-   "after": "day1Action",
-   "group": "group1"
+   "element": "day1SkipBT",
+   "operation": "replace",
+   "replace": "day1Action",
+   "newpanels": [
+    "day2", "Day2Action"
+   ]
   }
     ]
    }
