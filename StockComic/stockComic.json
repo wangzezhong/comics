@@ -19,7 +19,7 @@
      {
       "name": "day2Earn",
       "value": 0,
-      "what": ["day1Buy", "*", "0.005"]
+      "what": ["0", "-", "day1Buy", "*", "0.0015"]
      },
      {
       "name": "day2Buy",
@@ -42,7 +42,7 @@
       "name": "inMarket",
       "value": 0,
       "what": [
-      "day1Buy","+","day1Earn"
+      "day1Buy","+","day2Earn"
        ]
      }],
     "panels": [
