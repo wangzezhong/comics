@@ -26,9 +26,29 @@
       "value": 0
      },
      {
+      "name": "day2Sell",
+      "value": 0
+     },
+     {
+      "name": "day3Buy",
+      "value": 0
+     },
+     {
+      "name": "day3Sell",
+      "value": 0
+     },
+     {
+      "name": "day4Buy",
+      "value": 0
+     },
+     {
+      "name": "day4Sell",
+      "value": 0
+     },
+     {
       "name": "cash",
       "value": 0,
-      "what": ["1000","-","day1Buy"]
+      "what": ["1000","-","day1Buy","-","day2Buy","-","day3Buy","-","day4Buy","+", "day2Sell","+", "day3Sell","+", "day4Sell"]
      },
      {
       "name": "cashIcon",
@@ -94,6 +114,14 @@
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day1Action.svg"
      },
      {
+      "id": "day3Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day3Action.svg"
+     },
+     {
+      "id": "day4Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day4Action.svg"
+     },
+     {
       "id": "day2",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day2.svg"
      },
@@ -110,7 +138,7 @@
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day5.svg"
      },
      {
-      "id": "Day2Action",
+      "id": "day2Action",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day2Action.svg"
      }
     ],
@@ -126,13 +154,42 @@
        }
       }
      },
-   
+     {
+      "trigger": "mouseover",
+      "element": "day2SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+   {
+      "trigger": "mouseover",
+      "element": "day3SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "day4SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
      {
       "operation": "isotype",
       "variable": "cashIcon",
       "to": "cashIconPlaceHolder",
       "attr": {
-       "widthIcon": 20
+       "widthIcon": 35
       },
       "icon": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/moneyIcon.svg"
      },
@@ -142,7 +199,34 @@
    "operation": "replace",
    "replace": "day1Action",
    "newpanels": [
-    "day2", "Day2Action"
+    "day2", "day2Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "day2SkipBT",
+   "operation": "replace",
+   "replace": "day2Action",
+   "newpanels": [
+    "day3", "day3Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "day3SkipBT",
+   "operation": "replace",
+   "replace": "day3Action",
+   "newpanels": [
+    "day4", "day4Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "day4SkipBT",
+   "operation": "replace",
+   "replace": "day4Action",
+   "newpanels": [
+    "day5"
    ]
   }
     ]
