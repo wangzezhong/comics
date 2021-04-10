@@ -276,6 +276,10 @@
      {
       "id": "MonthPhew",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/monthphew.svg"
+     },
+     {
+      "id": "month1Candle",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month1Candle.svg"
      }
      
     ],
@@ -394,6 +398,26 @@
      {
       "trigger": "mouseover",
       "element": "m4SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "question",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "close",
       "operation": "highlight",
       "after": {
        "style": {
@@ -545,6 +569,24 @@
    ],
    "after": "month5",
    "group": "group3"
+  },
+  {
+   "trigger": "click",
+   "element": "openQuestion",
+   "operation": "replace",
+   "replace": "month1",
+   "newpanels": [
+    "month1Candle"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "close",
+   "operation": "replace",
+   "replace": "month1Candle",
+   "newpanels": [
+    "month1"
+   ]
   }
     ]
    }
