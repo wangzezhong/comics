@@ -12,6 +12,16 @@
     ],
     "classes": [],
     "variables": [
+{
+"name": "cash",
+"value": 1000,
+"what": ["1000","-","day1Buy","-","day2Buy","-","day3Buy","-","day4Buy","+", "day2Sell","+", "day3Sell","+", "day4Sell"]
+},
+{
+"name": "cashIcon",
+"value": 0,
+"what": ["(", "cash","-","day1Buy",")", "/","100"]
+},
      {
       "name": "day1Buy",
       "value": 0
@@ -75,19 +85,7 @@
       "value": 0,
       "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", "+", "day3Earn", "+", "day34Earn", "+", "day3Buy", "-", "day3Sell", "+", "day4Earn", "+", "day45Earn", "+", "day4Buy", "-", "day4Sell", ")", "*", "0.0034"]
      },
-     {
-      "name": "cash",
-      "value": 1000,
-      "what": ["1000","-","day1Buy","-","day2Buy","-","day3Buy","-","day4Buy","+", "day2Sell","+", "day3Sell","+", "day4Sell"]
-     },
-     {
-      "name": "cashIcon",
-      "value": 0,
-      "what": [
-       "(", "cash","-","day1Buy",")", "/","100"
-       
-      ]
-     },
+     
      {
       "name": "earnedTotal",
       "value": 0,
@@ -230,6 +228,16 @@
       }
      },
      {
+      "trigger": "mouseover",
+      "element": "day5ShowRst",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
       "operation": "isotype",
       "variable": "cashIcon",
       "to": "cashIconPlaceHolder",
@@ -279,7 +287,7 @@
     " < 0"
    ],
    "operation": "loadLayout",
-   "element": "day5",
+   "element": "day5ShowRst",
    "layout": [
     ["phew"]
    ],
@@ -293,7 +301,7 @@
     "> 0"
    ],
    "operation": "loadLayout",
-   "element": "day5",
+   "element": "day5ShowRst",
    "layout": [
     [
      "congrats"
