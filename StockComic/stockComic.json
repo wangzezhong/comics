@@ -22,12 +22,27 @@
       "what": ["0", "-", "day1Buy", "*", "0.0015"]
      },
      {
+      "name": "day23Earn",
+      "value": 0,
+      "what": ["(","day1Buy", "*", "-0.0015", "+", "day1Buy", ")", "*", "0.0115"]
+     },
+     {
       "name": "day2Buy",
       "value": 0
      },
      {
       "name": "day2Sell",
       "value": 0
+     },
+     {
+      "name": "day3Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", ")", "*", "0.01"]
+     },
+     {
+      "name": "day34Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", "+", "day3Earn", ")", "*", "-0.0014"]
      },
      {
       "name": "day3Buy",
@@ -38,6 +53,16 @@
       "value": 0
      },
      {
+      "name": "day4Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", "+", "day3Earn", "+", "day34Earn", "+", "day3Buy", "-", "day3Sell", ")", "*", "-0.017"]
+     },
+     {
+      "name": "day45Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", "+", "day3Earn", "+", "day34Earn", "+", "day3Buy", "-", "day3Sell", "+", "day4Earn", ")", "*", "0.024"]
+     },
+     {
       "name": "day4Buy",
       "value": 0
      },
@@ -46,8 +71,13 @@
       "value": 0
      },
      {
-      "name": "cash",
+      "name": "day5Earn",
       "value": 0,
+      "what": ["(", "day1Buy", "+", "day2Earn", "+", "day23Earn", "+", "day2Buy", "-", "day2Sell", "+", "day3Earn", "+", "day34Earn", "+", "day3Buy", "-", "day3Sell", "+", "day4Earn", "+", "day45Earn", "+", "day4Buy", "-", "day4Sell", ")", "*", "0.0034"]
+     },
+     {
+      "name": "cash",
+      "value": 1000,
       "what": ["1000","-","day1Buy","-","day2Buy","-","day3Buy","-","day4Buy","+", "day2Sell","+", "day3Sell","+", "day4Sell"]
      },
      {
@@ -59,10 +89,17 @@
       ]
      },
      {
-      "name": "inMarket",
+      "name": "earnedTotal",
       "value": 0,
       "what": [
-      "day1Buy","+","day2Earn"
+      "Math",".", "round", "(", "(", "day2Earn","+","day23Earn", "+", "day4Earn", "+", "day45Earn", "+", "day5Earn", ")", "*", "10",")", "/", "10"
+       ]
+     },
+     {
+      "name": "moneyTotal",
+      "value": 0,
+      "what": [
+      "Math",".", "round", "(", "(", "day2Earn","+","day23Earn", "+", "day4Earn", "+", "day45Earn", "+", "day5Earn", "+", "1000",")","*", "10", ")", "/", "10"
        ]
      }],
     "panels": [
@@ -140,6 +177,14 @@
      {
       "id": "day2Action",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/day2Action.svg"
+     },
+     {
+      "id": "congrats",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/contrats.svg"
+     },
+     {
+      "id": "phew",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/phew.svg"
      }
     ],
     "operations": [
@@ -225,9 +270,37 @@
    "element": "day4SkipBT",
    "operation": "replace",
    "replace": "day4Action",
-   "newpanels": [
-    "day5"
-   ]
+   "newpanels": ["day5"] 
+  },
+  {
+   "trigger": "click",
+   "condition": [
+    "earnedTotal",
+    " < 0"
+   ],
+   "operation": "loadLayout",
+   "element": "day5",
+   "layout": [
+    ["phew"]
+   ],
+   "after": "day5",
+   "group": "group1"
+  },
+  {
+   "trigger": "click",
+   "condition": [
+    "earnedTotal",
+    "> 0"
+   ],
+   "operation": "loadLayout",
+   "element": "day5",
+   "layout": [
+    [
+     "congrats"
+    ]
+   ],
+   "after": "day5",
+   "group": "group1"
   }
     ]
    }
