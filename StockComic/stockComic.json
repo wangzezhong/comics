@@ -131,7 +131,7 @@
       "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", "+", "m34Earn", "+", "day3Buy", "-", "day3Sell", "+", "m4Earn", ")", "*", "0.0204"]
      },
      {
-      "name": "day5Earn",
+      "name": "m5Earn",
       "value": 0,
       "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", "+", "m34Earn", "+", "day3Buy", "-", "day3Sell", "+", "m4Earn", "+", "m45Earn", "+", "day4Buy", "-", "day4Sell", ")", "*", "-0.046"]
      },
