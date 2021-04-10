@@ -99,6 +99,55 @@
       "what": [
       "Math",".", "round", "(", "(", "day2Earn","+","day23Earn", "+", "day4Earn", "+", "day45Earn", "+", "day5Earn", "+", "1000",")","*", "10", ")", "/", "10"
        ]
+     },
+     {
+      "name": "m2Earn",
+      "value": 0,
+      "what": ["day1Buy", "*", "0.0388"]
+     },
+     {
+      "name": "m23Earn",
+      "value": 0,
+      "what": ["(","day1Buy", "*", "0.0388", "+", "day1Buy", ")", "*", "0.0068"]
+     },
+     {
+      "name": "m3Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", ")", "*", "0.0721"]
+     },
+     {
+      "name": "m34Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", ")", "*", "0.0012"]
+     },
+     {
+      "name": "m4Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", "+", "m34Earn", "+", "day3Buy", "-", "day3Sell", ")", "*", "-0.0494"]
+     },
+     {
+      "name": "m45Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", "+", "m34Earn", "+", "day3Buy", "-", "day3Sell", "+", "m4Earn", ")", "*", "0.0204"]
+     },
+     {
+      "name": "day5Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "m2Earn", "+", "m23Earn", "+", "day2Buy", "-", "day2Sell", "+", "m3Earn", "+", "m34Earn", "+", "day3Buy", "-", "day3Sell", "+", "m4Earn", "+", "m45Earn", "+", "day4Buy", "-", "day4Sell", ")", "*", "-0.046"]
+     },
+     {
+      "name": "earnedTotalMonthly",
+      "value": 0,
+      "what": [
+      "Math",".", "round", "(", "(", "m2Earn","+","m23Earn", "+", "m4Earn", "+", "m45Earn", "+", "m5Earn", ")", "*", "10",")", "/", "10"
+       ]
+     },
+     {
+      "name": "moneyTotalMonthly",
+      "value": 0,
+      "what": [
+      "Math",".", "round", "(", "(", "m2Earn","+","m23Earn", "+", "m4Earn", "+", "m45Earn", "+", "m5Earn", "+", "1000",")","*", "10", ")", "/", "10"
+       ]
      }],
     "panels": [
      {
@@ -183,7 +232,52 @@
      {
       "id": "phew",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/phew.svg"
+     },
+     {
+      "id": "month1",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month1.svg"
+     },
+     {
+      "id": "month2",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month2.svg"
+     },
+     {
+      "id": "month3",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month3.svg"
+     },
+     {
+      "id": "month4",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month4.svg"
+     },
+     {
+      "id": "month5",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month5.svg"
+     },
+     {
+      "id": "m1Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/m1Action.svg"
+     },
+     {
+      "id": "m2Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/m2Action.svg"
+     },
+     {
+      "id": "m3Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/m3Action.svg"
+     },
+     {
+      "id": "m4Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/m4Action.svg"
+     },
+     {
+      "id": "MonthCongtrats",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Monthcontrats.svg"
+     },
+     {
+      "id": "MonthPhew",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/monthphew.svg"
      }
+     
     ],
     "operations": [
      
@@ -230,6 +324,76 @@
      {
       "trigger": "mouseover",
       "element": "day5ShowRst",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "month5ShowRst",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "month",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "year",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "m1SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "m2SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "m3SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "m4SkipBT",
       "operation": "highlight",
       "after": {
        "style": {
@@ -309,6 +473,78 @@
    ],
    "after": "day5",
    "group": "group1"
+  },
+  {
+   "trigger": "click",
+   "operation": "loadLayout",
+   "element": "month",
+   "layout": [["month1","m1Action"]],
+   "after": "congrats",
+   "group": "group2"
+  },
+  {
+   "trigger": "click",
+   "element": "m1SkipBT",
+   "operation": "replace",
+   "replace": "m1Action",
+   "newpanels": [
+    "month2", "m2Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "m2SkipBT",
+   "operation": "replace",
+   "replace": "m2Action",
+   "newpanels": [
+    "month3", "m3Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "m3SkipBT",
+   "operation": "replace",
+   "replace": "m3Action",
+   "newpanels": [
+    "month4", "m4Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "m4SkipBT",
+   "operation": "replace",
+   "replace": "m4Action",
+   "newpanels": ["month5"] 
+  },
+  {
+   "trigger": "click",
+   "condition": [
+    "earnedTotalMonthly",
+    " < 0"
+   ],
+   "operation": "loadLayout",
+   "element": "month5ShowRst",
+   "layout": [
+    ["MonthPhew"]
+   ],
+   "after": "month5",
+   "group": "group3"
+  },
+  {
+   "trigger": "click",
+   "condition": [
+    "earnedTotalMonthly",
+    "> 0"
+   ],
+   "operation": "loadLayout",
+   "element": "month5ShowRst",
+   "layout": [
+    [
+     "MonthCongtrats"
+    ]
+   ],
+   "after": "month5",
+   "group": "group3"
   }
     ]
    }
