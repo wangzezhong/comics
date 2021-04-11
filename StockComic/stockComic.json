@@ -148,6 +148,55 @@
       "what": [
       "Math",".", "round", "(", "(", "m2Earn","+","m23Earn", "+", "m4Earn", "+", "m45Earn", "+", "m5Earn", "+", "1000",")","*", "10", ")", "/", "10"
        ]
+     },
+     {
+      "name": "y2Earn",
+      "value": 0,
+      "what": ["day1Buy", "*", "0.3623"]
+     },
+     {
+      "name": "y23Earn",
+      "value": 0,
+      "what": ["(","day1Buy", "*", "0.3623", "+", "day1Buy", ")", "*", "0.0105"]
+     },
+     {
+      "name": "y3Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "y2Earn", "+", "y23Earn", "+", "day2Buy", "-", "day2Sell", ")", "*", "0.1834"]
+     },
+     {
+      "name": "y34Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "y2Earn", "+", "y23Earn", "+", "day2Buy", "-", "day2Sell", "+", "y3Earn", ")", "*", "-0.0028"]
+     },
+     {
+      "name": "y4Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "y2Earn", "+", "y23Earn", "+", "day2Buy", "-", "day2Sell", "+", "y3Earn", "+", "y34Earn", "+", "day3Buy", "-", "day3Sell", ")", "*", "0.5606"]
+     },
+     {
+      "name": "y45Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "y2Earn", "+", "y23Earn", "+", "day2Buy", "-", "day2Sell", "+", "y3Earn", "+", "y34Earn", "+", "day3Buy", "-", "day3Sell", "+", "y4Earn", ")", "*", "-0.0097"]
+     },
+     {
+      "name": "y5Earn",
+      "value": 0,
+      "what": ["(", "day1Buy", "+", "y2Earn", "+", "y23Earn", "+", "day2Buy", "-", "day2Sell", "+", "y3Earn", "+", "y34Earn", "+", "day3Buy", "-", "day3Sell", "+", "y4Earn", "+", "y45Earn", "+", "day4Buy", "-", "day4Sell", ")", "*", "0.416"]
+     },
+     {
+      "name": "earnedTotalYearly",
+      "value": 0,
+      "what": [
+      "Math",".", "round", "(", "(", "y2Earn","+","y23Earn", "+", "y4Earn", "+", "y45Earn", "+", "y5Earn", ")", "*", "10",")", "/", "10"
+       ]
+     },
+     {
+      "name": "moneyTotalYearly",
+      "value": 0,
+      "what": [
+      "Math",".", "round", "(", "(", "y2Earn","+","y23Earn", "+", "y4Earn", "+", "y45Earn", "+", "y5Earn", "+", "1000",")","*", "10", ")", "/", "10"
+       ]
      }],
     "panels": [
      {
@@ -280,6 +329,50 @@
      {
       "id": "month1Candle",
       "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/month1Candle.svg"
+     },
+     {
+      "id": "year1Candle",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year1Candle.svg"
+     },
+     {
+      "id": "year1",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year1.svg"
+     },
+     {
+      "id": "year2",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year2.svg"
+     },
+     {
+      "id": "year3",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year3.svg"
+     },
+     {
+      "id": "year4",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year4.svg"
+     },
+     {
+      "id": "year5",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/year5.svg"
+     },
+     {
+      "id": "y1Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/y1Action.svg"
+     },
+     {
+      "id": "y2Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/y2Action.svg"
+     },
+     {
+      "id": "y3Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/y3Action.svg"
+     },
+     {
+      "id": "y4Action",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/y4Action.svg"
+     },
+     {
+      "id": "Yearcontgrats",
+      "url": "https://raw.githubusercontent.com/wangzezhong/comics/main/StockComic/Yearcontrats.svg"
      }
      
     ],
@@ -407,6 +500,46 @@
      },
      {
       "trigger": "mouseover",
+      "element": "y1SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "y2SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "y3SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "y4SkipBT",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
       "element": "question",
       "operation": "highlight",
       "after": {
@@ -418,6 +551,16 @@
      {
       "trigger": "mouseover",
       "element": "close",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "closeYear",
       "operation": "highlight",
       "after": {
        "style": {
@@ -507,6 +650,18 @@
    "group": "group2"
   },
   {
+   "trigger": "click", 
+   "element": "month",
+   "operation": "remove",
+   "what": ["year1", "year2", "year3", "year4", "year5", "y1Action", "y2Action", "y3Action", "y4Action","year1Candle","Yearcontgrats", "month2", "month3", "month4", "month5", "m2Action", "m3Action", "m4Action","month1Candle","MonthCongtrats","MonthPhew"] 
+},
+  {
+   "trigger": "click", 
+   "element": "year",
+   "operation": "remove",
+   "what": ["month1", "month2", "month3", "month4", "month5", "m1Action", "m2Action", "m3Action", "m4Action","month1Candle","MonthCongtrats","MonthPhew", "year2", "year3", "year4", "year5", "y2Action", "y3Action", "y4Action","year1Candle","Yearcontgrats"] 
+},
+  {
    "trigger": "click",
    "element": "m1SkipBT",
    "operation": "replace",
@@ -587,6 +742,80 @@
    "newpanels": [
     "month1"
    ]
+  },
+  {
+   "trigger": "click",
+   "operation": "loadLayout",
+   "element": "year",
+   "layout": [["year1","y1Action"]],
+   "after": "congrats",
+   "group": "group2"
+  },
+  {
+   "trigger": "click",
+   "element": "YearopenQuestion",
+   "operation": "replace",
+   "replace": "year1",
+   "newpanels": [
+    "year1Candle"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "closeYear",
+   "operation": "replace",
+   "replace": "year1Candle",
+   "newpanels": [
+    "year1"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "y1SkipBT",
+   "operation": "replace",
+   "replace": "y1Action",
+   "newpanels": [
+    "year2", "y2Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "y2SkipBT",
+   "operation": "replace",
+   "replace": "y2Action",
+   "newpanels": [
+    "year3", "y3Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "y3SkipBT",
+   "operation": "replace",
+   "replace": "y3Action",
+   "newpanels": [
+    "year4", "y4Action"
+   ]
+  },
+  {
+   "trigger": "click",
+   "element": "y4SkipBT",
+   "operation": "replace",
+   "replace": "y4Action",
+   "newpanels": [
+    "year5"
+   ]
+  },
+  {
+   "trigger": "click",
+   "operation": "loadLayout",
+   "element": "year5ShowRst",
+   "layout": [
+    [
+     "Yearcontgrats"
+    ]
+   ],
+   "after": "year5",
+   "group": "group4"
   }
     ]
    }
