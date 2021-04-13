@@ -570,6 +570,16 @@
      },
      {
       "trigger": "mouseover",
+      "element": "year5ShowRst",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "fill": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
       "element": "from2019Nov",
       "operation": "highlight",
       "after": {
