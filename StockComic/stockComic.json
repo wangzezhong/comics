@@ -569,6 +569,26 @@
       }
      },
      {
+      "trigger": "mouseover",
+      "element": "from2019Nov",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "stroke": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
+      "element": "coronavirus",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "stroke": "orange"
+       }
+      }
+     },
+     {
       "operation": "isotype",
       "variable": "cashIcon",
       "to": "cashIconPlaceHolder",
