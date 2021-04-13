@@ -590,6 +590,16 @@
      },
      {
       "trigger": "mouseover",
+      "element": "fiveYears",
+      "operation": "highlight",
+      "after": {
+       "style": {
+        "stroke": "orange"
+       }
+      }
+     },
+     {
+      "trigger": "mouseover",
       "element": "coronavirus",
       "operation": "highlight",
       "after": {
@@ -846,6 +856,12 @@
    ],
    "after": "year5",
    "group": "group4"
-  }
+  },
+  {
+   "trigger": "click",
+   "operation": "jump",
+   "element": "jumpToTrading",
+   "target": "BandS"
+ }
     ]
    }
